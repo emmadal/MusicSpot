@@ -38,7 +38,10 @@ const Styles = StyleSheet.create({
   },
   artistTrack:{
     color: Colors.white,
-    fontSize: 14,
+    justifyContent: 'center',
+    textAlign: 'center',
+    flexWrap:'wrap',
+    fontSize: 13,
   },
   titleTrack:{
     fontSize: 17,

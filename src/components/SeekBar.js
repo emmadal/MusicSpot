@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
-const Slider = require('react-native-slider');
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+
+import Slider from 'react-native-slider';
 
 function pad(n, width, z=0) {
   n = n + '';

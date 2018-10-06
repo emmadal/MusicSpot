@@ -10,6 +10,7 @@ import TrackDetails from './TrackDetails';
 import SeekBar from './SeekBar';
 import Controls from './Controls';
 import Video from 'react-native-video';
+import Colors from '../styles/Colors'
 
 export default class Player extends Component {
   constructor(props) {
@@ -98,9 +99,14 @@ export default class Player extends Component {
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
-        <Header message="Playing From Charts" />
+        <Header message="Playlist" />
         <AlbumArt url={track.albumArtUrl} />
         <TrackDetails title={track.title} artist={track.artist} />
+        <SeekBar
+          onSeek={this.seek.bind(this)}
+          trackLength={this.state.totalLength}
+          onSlidingStart={() => this.setState({paused: true})}
+          currentPosition={this.state.currentPosition} />
         <Controls
           onPressRepeat={() => this.setState({repeatOn : !this.state.repeatOn})}
           repeatOn={this.state.repeatOn}
@@ -121,7 +127,7 @@ export default class Player extends Component {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: 'rgb(4,4,4)',
+    backgroundColor: Colors.blue,
   },
   audioElement: {
     height: 0,
